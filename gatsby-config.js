@@ -4,9 +4,9 @@
 module.exports = {
   siteMetadata: {
     title: `woodmask`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.woodmask.jp`
   },
-  plugins: ["gatsby-plugin-theme-ui", "gatsby-plugin-google-gtag", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
+  plugins: ["gatsby-plugin-theme-ui", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/icon.png"
