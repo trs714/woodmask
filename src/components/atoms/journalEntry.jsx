@@ -1,8 +1,9 @@
 import React from "react"
 import { Select, Input } from 'theme-ui'
 
-export default function JournalEntry() {
-    return (<>
+export default function JournalEntry({options, defaults}) {
+  
+  return (<>
   <Select sx={{
     webkitAppearance: 'none',
     appearance: 'none',
@@ -12,15 +13,13 @@ export default function JournalEntry() {
     '&:focus': {
       border: 'none'
     }
-  }} name="sound" id="sound">
+  }} name="sound" id="sound" defaultValue={defaults[0]}>
   <optgroup label="勘定科目">
     <option> </option>
-    <option>減価償却積立保証金</option>
-    <option>Boop</option>
-    <option>Blip</option>
+    {options.map((option)=><option>{option}</option>)}
   </optgroup>
   </Select>
-  <Input name="username" id="username" type="number"
+  <Input name="username" id="username" type="number" defaultValue={defaults[1]}
     sx={{
       textAlign: 'right',
       border: 'none',
@@ -37,15 +36,13 @@ export default function JournalEntry() {
     '&:focus': {
       border: 'none'
     }
-  }} name="sound" id="sound">
+  }} name="sound" id="sound" defaultValue={defaults[2]}>
   <optgroup label="勘定科目">
     <option> </option>
-    <option>減価償却積立保証金</option>
-    <option>Boop</option>
-    <option>Blip</option>
+    {options.map((option)=><option>{option}</option>)}
   </optgroup>
   </Select>
-  <Input name="username" id="username" type="number"
+  <Input name="username" id="username" type="number" defaultValue={defaults[3]}
     sx={{
       textAlign: 'right',
       border: 'none',

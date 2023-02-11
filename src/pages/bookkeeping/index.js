@@ -42,7 +42,7 @@ const Bookkeeping = ({data}) => {
 
 export const query = graphql`
   query {
-    allMdx {
+    allMdx (sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           id

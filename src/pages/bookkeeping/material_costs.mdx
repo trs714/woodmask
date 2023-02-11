@@ -1,0 +1,27 @@
+---
+title: 工業簿記 材料費
+slug: material-costs
+date: 2023-02-07
+---
+
+import { Grid, Box, Select, Input } from 'theme-ui'
+import JournalEntry from '../../components/atoms/journalEntry'
+
+# 材料費
+
+## 材料の購入
+材料100円を掛けで仕入れた。このとき、取引運賃50円を現金で支払った。
+
+<Grid gap={0.5} columns={['3fr 2fr 3fr 2fr']} sx={{bg: 'text'}} p={0.5}>
+  <JournalEntry options={['材料', '買掛金', '現金']} defaults={['材料', '150', '買掛金', '100']}/>
+  <JournalEntry options={['材料', '買掛金', '現金']} defaults={['', '', '現金', '50']}/>
+</Grid>
+
+## 材料の消費
+300円分の材料を育苗費200円と小農器具費100円に振り返る。
+<Grid gap={0.5} columns={['3fr 2fr 3fr 2fr']} sx={{bg: 'text'}} p={0.5}>
+  <JournalEntry options={['材料', '仕掛品', '製造間接費']} defaults={['仕掛品', '200', '材料', '300']}/>
+  <JournalEntry options={['材料', '仕掛品', '製造間接費']} defaults={['製造間接費', '100', '', '']}/>
+</Grid>
+
+## 材料費の計算

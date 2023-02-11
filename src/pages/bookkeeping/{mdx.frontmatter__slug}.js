@@ -7,12 +7,14 @@ const BlogPost = ({ data, children }) => {
   return (
     <>
       <Header/>
-      <Box sx={{p:[24,48,96]}}>
-      {children}
+      <Box sx={{px:[24,48,96]}}>
+      <>{children}</>
       </Box>
     </>
   )
 }
+
+export const Head = ({ data }) => <title>{data.mdx.frontmatter.title}</title>
 
 export const query = graphql`
   query ($id: String) {
@@ -25,6 +27,5 @@ export const query = graphql`
   }
 `
 
-export const Head = ({ data }) => <title>{data.mdx.frontmatter.title}</title>
 
 export default BlogPost
